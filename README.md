@@ -4,10 +4,12 @@ Jobly is a web application that allows users to view and apply for different (fa
 ## Description
 This is the back-end API for the Springboard Jobly project, created with Express, Node, and PostgreSQL. For the front-end application, [see here](https://github.com/kevban/jobly-frontend)
 
-## API
+## Authentication
 In the request header, include your json web token for your account to access and edit your account.
 ## Endpoints
-`POST https://papayas-jobly-api.up.railway.app/auth/token` fetch json web token using username and password
+### `POST https://papayas-jobly-api.up.railway.app/auth/token` 
+fetch json web token using username and password
+
 request format
 ```
 {
@@ -21,7 +23,9 @@ response format
     "token": "jwt_token"
 }
 ```
-`POST https://papayas-jobly-api.up.railway.app/auth/register` create a new account
+### `POST https://papayas-jobly-api.up.railway.app/auth/register` 
+create a new account
+
 request format
 ```
 {
@@ -38,7 +42,8 @@ response format
     "token": "jwt_token"
 }
 ```
-`GET https://papayas-jobly-api.up.railway.app/jobs` view all available jobs
+### `GET https://papayas-jobly-api.up.railway.app/jobs` 
+view all available jobs
 
 response format
 ```
@@ -46,7 +51,8 @@ response format
     "jobs": [arr of jobs]
 }
 ```
-`GET https://papayas-jobly-api.up.railway.app/companies` view all available companies
+### `GET https://papayas-jobly-api.up.railway.app/companies` 
+view all available companies
 
 response format
 ```
@@ -54,7 +60,10 @@ response format
     "companies": [arr of companies]
 }
 ```
-`PATCH https://papayas-jobly-api.up.railway.app/users/:username` edit account information
+### `PATCH https://papayas-jobly-api.up.railway.app/users/:username` 
+edit account information
+
+request format
 ```
 {
   "password": "password",
@@ -66,15 +75,18 @@ response format
 response format
 ```
 {
-    "user": {
+    "user": 
+      {
         "username": "username"
-  "firstName": "First",
-  "lastName": "Last",
-  "email": "email@mail.com"
-}
+        "firstName": "First",
+        "lastName": "Last",
+        "email": "email@mail.com"
+      }
 }
 ```
-`POST https://papayas-jobly-api.up.railway.app/users/:username/jobs/:jobId` apply for a job
+### `POST https://papayas-jobly-api.up.railway.app/users/:username/jobs/:jobId` 
+apply for a job
+
 response format
 ```
 {
